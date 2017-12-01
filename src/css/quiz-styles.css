@@ -1,0 +1,31 @@
+.quiz-title{
+    font-size: 40px;
+}
+
+.quiz-subhead{
+    font-size: 20px;
+    margin-top: 13px;
+}
+
+.selections{
+    width: 600px;
+    display: inline-block;
+}
+
+.selectable{
+    border: 1px solid gray;
+    border-radius: 25px;
+    width: 600px;
+    height: 70px;
+    display: inline-block;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.option-text{
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

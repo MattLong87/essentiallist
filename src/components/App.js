@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import LandingPage from './LandingPage';
 import QuizPage from './QuizPage';
 
+import '../css/reset.css'
+import '../css/styles.css';
 
 class App extends Component {
   render() {
@@ -13,8 +15,8 @@ class App extends Component {
     };
 
     return (
-      //<LandingPage />
-      <QuizPage quiz={quiz} />
+      <LandingPage />
+      //<QuizPage quiz={quiz} />
     );
   }
 }

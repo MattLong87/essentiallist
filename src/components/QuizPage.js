@@ -11,6 +11,8 @@ quiz = {
 
 */
 
+import '../css/quiz-styles.css';
+
 export default function QuizPage(props){
 
     let selectables = props.quiz.selections.map((selection, key) => <div className="selectable" key={key}><span className="option-text">{key+1}. {selection}</span></div>)

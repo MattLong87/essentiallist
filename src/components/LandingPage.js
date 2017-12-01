@@ -1,5 +1,4 @@
 import React from 'react';
-
 import QuizButton from './QuizButton';
 
 export default class LandingPage extends React.Component {
@@ -11,7 +10,7 @@ export default class LandingPage extends React.Component {
     }
     
     render(){
-        let quizButtons = this.state.quizzes.map((title) => <QuizButton quizName={title} />);
+        let quizButtons = this.state.quizzes.map((title, key) => <QuizButton quizName={title} key={key}/>);
 
         return (
             <div className="landing-page">
