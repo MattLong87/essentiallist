@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import LandingPage from './LandingPage'
+import LandingPage from './LandingPage';
+import QuizPage from './QuizPage';
 
 
 class App extends Component {
   render() {
+
+    var quiz = {
+      title: "Top 100 Board Games",
+      verb: "played",
+      selections: ["Puerto Rico", "Agricola", "Arkham Horror", "Pandemic", "Gloomhaven"]
+    };
+
     return (
-      <LandingPage />
+      //<LandingPage />
+      <QuizPage quiz={quiz} />
     );
   }
 }
