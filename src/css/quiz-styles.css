@@ -17,7 +17,7 @@
     border-radius: 25px;
     width: 600px;
     height: 70px;
-    display: inline-block;
+    display: block;
     margin-bottom: 10px;
     position: relative;
 }
