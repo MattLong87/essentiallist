@@ -17,49 +17,38 @@ import '../css/quiz-styles.css';
 export default class QuizPage extends React.Component {
     /*
     this.state = {
-        selections: [
-                {
-                    option: "Settlers of Catan",
-                    selected: false
-                },
-                {
-                    option: "Puerto Rico",
-                    selected: false
-                }
-            ]
-        }
+        1: {option: "Puerto Rico", selected: false},
+        2: {option: "Gloomhaven", selected: false}
     }
     */
     constructor(props){
         super(props);
-        this.state = {
-            selections: this.props.quiz.selections.map((option) => {
-                let result = {option};
-                result['selected'] = false;
-                return result;
-            })
-        }
-        // This binding is necessary to make `this` work in the callback
-        //this.handleOptionClick = this.handleOptionClick.bind(this);
+        this.state = {};
+        this.props.quiz.selections.forEach((option, key) => {
+            this.state[key + 1] = {option, selected: false};
+        })
     }
 
-    // handleOptionClick(key){
-    //     this.setState(prevState => ({
+    handleOptionClick(key){
+        let newObject = {}
+        newObject[key] = this.state[key];
+        newObject[key]["selected"] = !newObject[key]["selected"];
+        this.setState(newObject);
+    }
 
-    //     }))
-    // }
-//need to rebuild state so selections are not an array, so we can update just one of them instead of whole array
     render(){
-
-        let selectables = this.state.selections.map((selection, key) => (
-            <Selectable 
-                key={key} 
-                number={key+1} 
-                option={selection.option} 
-                selected={selection.selected} 
-                //onClick={handleOptionClick(key)}
-            />)
-        )
+        let selectables = [];
+        for (var entry in this.state){
+            selectables.push(
+                <Selectable
+                    key = {entry}
+                    number = {entry}
+                    option = {this.state[entry]["option"]}
+                    selected = {this.state[entry]["selected"]}
+                    onClick = {this.handleOptionClick.bind(this, entry)}
+                />
+            )
+        }
 
         return (
             <div className="quiz-page">
