@@ -15,8 +15,8 @@ class App extends Component {
     };
 
     return (
-      //<LandingPage />
-      <QuizPage quiz={quiz} />
+      <LandingPage />
+      //<QuizPage quiz={quiz} />
     );
   }
 }
