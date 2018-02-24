@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LandingPage from './LandingPage';
 import QuizPage from './QuizPage';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import '../css/reset.css'
 import '../css/styles.css';
@@ -15,8 +16,9 @@ class App extends Component {
     };
 
     return (
-      <LandingPage />
-      //<QuizPage quiz={quiz} />
+      <Router>
+        <Route exact path="/" component={LandingPage} />
+      </Router>
     );
   }
 }
