@@ -1,5 +1,6 @@
 import React from 'react';
 import QuizButton from './QuizButton';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default class LandingPage extends React.Component {
     constructor(props){
@@ -10,7 +11,10 @@ export default class LandingPage extends React.Component {
     }
     
     render(){
-        let quizButtons = this.state.quizzes.map((title, key) => <QuizButton quizName={title} key={key}/>);
+        let quizButtons = this.state.quizzes.map((title, key) => {
+            var titleConcat = title.replace(/\s+/g, '-');
+            return <Link to={titleConcat}><QuizButton quizName={title} key={key}/></Link>;
+        });
 
         return (
             <div className="landing-page">

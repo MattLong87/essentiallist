@@ -17,7 +17,10 @@ class App extends Component {
 
     return (
       <Router>
-        <Route exact path="/" component={LandingPage} />
+        <div>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path={"/" + quiz.title.replace(/\s+/g, '-')} render={()=><QuizPage quiz={quiz}/>}/>
+        </div>
       </Router>
     );
   }
