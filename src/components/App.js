@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LandingPage from './LandingPage';
 import QuizPage from './QuizPage';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import quizzes from './quizzes';
 
 import '../css/reset.css'
 import '../css/styles.css';
@@ -10,18 +11,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        quizzes: [
-          {
-            title: "Top 100 Board Games",
-            verb: "played",
-            selections: ["Puerto Rico", "Agricola", "Arkham Horror", "Pandemic", "Gloomhaven"]
-          },
-          {
-            title: "Top 100 Movies",
-            verb: "seen",
-            selections: ["Citizen Kane", "No Country For Old Men", "Groundhog Day"]
-          }
-        ]
+      quizzes: quizzes()
     }
   }
 
